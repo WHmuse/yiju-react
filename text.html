@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+      /**
+      单元格属性（ table-cell）
+        父元素设置display：teble-cell即可让子元素垂直居中
+        行内元素水平居中：text-align：center；
+        块级元素水平居中：margin：auto
+      vertical-align:middle;
+      display:table-cell;
+      把元素变成定位元素,全部在子元素中设定  如果想根据父元素来居中
+      设置父元素的：position: relative;
+       position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      弹性盒子方式在父级设置:
+      display: flex;
+      垂直：
+      align-items: center;
+      水平
+      justify-content: center;
+    BFC 概念;
+      Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念。
+        它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如
+        何定位，以及和其他元素的关系和相互作用。
+        具有 BFC 特性的元素可以看作是隔离了的独立容器，
+        容器里面的元素不会在布局上影响到外面的元素，
+        并且 BFC 具有普通容器所没有的一些特性。
+      触发 BFC
+        只要元素满足下面任一条件即可触发 BFC 特性：
+
+        body 根元素
+        浮动元素：float 除 none 以外的值
+        绝对定位元素：position (absolute、fixed)
+        display 为 inline-block、table-cells、flex
+        overflow 除了 visible 以外的值 (hidden、auto、scroll)
+      BFC 特性及应用:
+          . 同一个 BFC 下外边距会发生折叠
+          如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。
+          BFC 可以包含浮动的元素（清除浮动）
+          BFC 可以阻止元素被浮动元素覆盖
+      */
+    .flex_parent{
+      width: 100%;
+      height: 600px;
+      
+      background-color: black;
+    }
+    .flex_item{
+      width: 200px;
+      height: 200px;
+ 
+
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex_parent">
+    <div class="flex_item"></div>
+  </div>
+</body>
+</html>
